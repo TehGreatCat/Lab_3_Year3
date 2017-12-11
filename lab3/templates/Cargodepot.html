@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Cargo Depot{% endblock title %}
+
+{% block content %}
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="container" >
+            <form method="GET" action="">
+                <input type="text" name="q" placeholder="Search posts"/>
+                <input type="submit" value="Search" />
+            </form>
+            <br>
+            <table class="table tab-pane">
+                    <tr>
+                        <th>Cargo Depot ID</th>
+                        <th>Height</th>
+                        <th>Volume</th>
+                        <th>Number of Loaders</th>
+                        <th>Terminal</th>
+                    </tr>
+                {% for depot in depots %}
+                    <tr>
+                        <td>{{ depot.cargo_id }}</td>
+                        <td>{{ depot.height }}</td>
+                        <td>{{ depot.volume }}</td>
+                        <td>{{ depot.numberofloaders }}</td>
+                        <td>{{ depot.terminal }}</td>
+                        <td>
+                            <a href="/terminal1/Terminal/Cargodepot_add/{{ depot.cargo_id }}"><input  type="submit" class="btn btn-dark" value="Edit" name="edit"></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </div>
+        <a href="/terminal1/Cargodepot_add"><input  type="submit" class="btn btn-dark" value="Add" name="add"></a>
+        </div>
+    </div>
+{% endblock content %}

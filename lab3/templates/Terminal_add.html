@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal Add</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block title %}Add Terminal{% endblock title %}
+
+{% block content %}
+        <div class="container">
+<form action="" method="post">
+    {% csrf_token %}
+     <table class="table tab-pane">
+         <tr>
+             <td>
+                 <label for = "traffic">Passenger Traffic:</label>
+             </td>
+             <td>
+                 <input type="number" name="traffic" value="{{ instance.traffic }}" />
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <label for = "type">Type:</label>
+             </td>
+             <td>
+                 <input type="text" name="type" value="{{ instance.type }}" />
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <label for = "city">City:</label>
+             </td>
+             <td>
+                 <input type="text" name="city" value="{{ instance.city }}" />
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <label for = "radarrange">Radar range:</label>
+             </td>
+             <td>
+                 <input type="number" name="radarrange" value="{{ instance.radarrange }}" />
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <label for = "Callsign">Call sign:</label>
+             </td>
+             <td>
+                 <input type="text" name="Callsign" value="{{ instance.Callsign }}" />
+             </td>
+         </tr>
+     </table>
+    <input  type="submit" class="btn btn-dark" value="Save" name="save">
+    <input  type="submit" class="btn btn-dark" value="Delete" name="delete">
+</form>
+        </div>
+
+{% endblock %}
+</body>
+</html>

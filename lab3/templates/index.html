@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Airport info</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% csrf_token %}
+
+    {% block title %}Cartel list{% endblock title %}
+    {% block content %}
+        <p><a href="Terminal/">Terminal</a></p>
+        <p><a href="Flight/">Flight</a></p>
+        <p><a href="Runway/">Runway</a></p>
+        <p><a href="Gates/">Gates</a></p>
+        <p><a href="Cargodepot/">Cargo Depot</a></p>
+        <p><a href="Plane/">Plane</a></p>
+    {% endblock content %}
+</body>
+</html>
